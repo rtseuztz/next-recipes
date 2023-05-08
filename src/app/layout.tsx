@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Nav from './nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className='flex min-h-screen flex-col items-center p-12'>
+          <Nav />
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
